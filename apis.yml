@@ -1,23 +1,67 @@
 aid: pls-group
+
 name: PLS Group
-description: 'PLS Group is a company surfaced via the API Evangelist harvest backlog (source: australia-apidays-2026)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: 'PLS Group Limited (ASX: PLS), formerly Pilbara Minerals, is a West Perth, Western Australia based producer of
+  lithium materials for the battery supply chain, founded in 2005. Its principal asset is the Pilgangoora lithium operation
+  in the Pilbara region, and it holds a portfolio of lithium assets and downstream strategic partnerships. The company was
+  surfaced via the Apidays Australia 2026 harvest; its website pls.com refuses automated readers with an HTTP 403 bot challenge,
+  and no public API, developer portal or documentation has been identified.'
+
 url: https://raw.githubusercontent.com/api-evangelist/pls-group/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:australia-apidays-2026
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-22 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-22'
+
 modified: '2026-10-22'
+
 tags:
 - Company
-apis: []
+- Lithium
+- Mining
+- Battery Materials
+- Australia
+- ASX Listed
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/pls-group-hosts.yml
+- type: Vendors
+  url: vendors/pls-group-vendors.yml
+- type: DomainSecurity
+  url: security/pls-group-domain-security.yml
 - type: Website
   url: https://pls.com/
+
+apis: []
+
+x-coverage:
+  state: blocked
+  reason: bot-challenge
+  detail: 'https://pls.com/ answered a browser User-Agent with HTTP 403 in pre-flight (front_door verdict bot-challenge);
+    /mcp returned 403 (gated, control 404). Identity (PLS Group Limited, formerly Pilbara Minerals, website pls.com) confirmed
+    by third-party listings. Sources: https://ycharts.com/companies/PILBF, https://www.investsmart.com.au/security/asx/pls/pls-group-limited
+    (web search, not fetched).'
+  evidence:
+  - url: https://pls.com/
+    status: 403
+x-enrichment:
+  date: '2026-10-22'
+  status: enriched
+  artifacts_added: 7
+  pass: modular-v1
+  engine: identity=anthropic,contract=anthropic,surfaces=anthropic,docs=anthropic,regulatory=anthropic

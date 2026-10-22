@@ -1,0 +1,29 @@
+name: PLS Group MCP Server
+type: MCPServer
+generated: '2026-10-22'
+method: none
+status: none
+description: >-
+  No MCP server, hosted or local, is published by PLS Group Limited (formerly Pilbara Minerals), and no
+  OpenAPI contract exists from which to derive a candidate tool list. The pre-flight probe recorded
+  https://pls.com/mcp as 403 (control 404). Re-checked on 2026-10-22: pls.com/mcp is a 301 to www.pls.com,
+  and https://www.pls.com/mcp returns 403 with a Cloudflare "Just a moment..." challenge page, the same
+  response as https://www.pls.com/ itself. That is the site-wide bot challenge, not an MCP endpoint.
+  https://www.pls.com/.well-known/mcp.json returns 404. A web search for a PLS Group / Pilbara Minerals
+  API, developer program or MCP server turned up only company profiles.
+source:
+- https://www.pls.com/mcp
+- https://www.pls.com/.well-known/mcp.json
+probes:
+- url: https://pls.com/mcp
+  status: 301
+- url: https://www.pls.com/mcp
+  status: 403
+  note: Cloudflare bot challenge (title "Just a moment..."), identical to the homepage
+- url: https://www.pls.com/.well-known/mcp.json
+  status: 404
+deployment:
+  mode: none
+  auth: unknown
+  verified: probed
+tools: []

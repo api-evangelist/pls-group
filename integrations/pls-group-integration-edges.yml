@@ -1,0 +1,21 @@
+generated: '2026-10-22'
+method: none
+source:
+- https://zapier.com/apps/pls-group/integrations
+- https://n8n.io/integrations/pls-group/
+- https://composio.dev/toolkits/pls-group
+- https://monid.ai/tools/pls-group
+checked:
+- https://composio.dev/toolkits/pls-group
+- https://monid.ai/tools/pls-group
+- https://n8n.io/integrations/pls-group/
+- https://zapier.com/apps/pls-group/integrations
+- https://www.pls.com/
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
+note: https://pls.com/ 301 -> https://www.pls.com/ answered HTTP 403 with a Cloudflare "Just a moment..." challenge
+  on 2026-10-22, so no partner or integrations page could be read. A web search turned up no API or developer documentation
+  from the company itself. Hits for the ticker (EODHD, Eulerpool) are third-party market-data APIs, not integrations
+  of this provider.
